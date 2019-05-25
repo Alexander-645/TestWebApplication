@@ -30,7 +30,7 @@ namespace TestMySite
 
             
             driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(20);
-            driver.Url = "file:///C:/Administration_IS/viral/index.html";
+            driver.Url = "file:///C:/Administration_IS/Application/index.html";
             MainPage mainPage = new MainPage(driver);
             Thread.Sleep(300);
             mainPage.ServicesPageLink();
@@ -57,7 +57,7 @@ namespace TestMySite
         public void ContactPageFormTest()
         {
             driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(15);
-            driver.Url = "file:///C:/Administration_IS/viral/index.html";
+            driver.Url = "file:///C:/Administration_IS/Application/index.html";
             MainPage mainPage = new MainPage(driver);
             Thread.Sleep(200);
             mainPage.MaintenancePageLink();
@@ -80,7 +80,7 @@ namespace TestMySite
         public void ContactPageAllFormElementsTest()
         {
             driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(15);
-            driver.Url = "file:///C:/Administration_IS/viral/index.html";
+            driver.Url = "file:///C:/Administration_IS/Application/index.html";
             MainPage mainPage = new MainPage(driver);
             Thread.Sleep(300);
             mainPage.ContactPageLink();
@@ -107,7 +107,7 @@ namespace TestMySite
         public void GoToAllPagesTest()
         {
             driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(15);
-            driver.Url = "file:///C:/Administration_IS/viral/index.html";
+            driver.Url = "file:///C:/Administration_IS/Application/index.html";
             MainPage mainPage = new MainPage(driver);
             Thread.Sleep(300);
             mainPage.ServicesPageTextLink();
@@ -132,7 +132,7 @@ namespace TestMySite
         {
             driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(15);
 
-            driver.Url = "file:///C:/Administration_IS/viral/index.html";
+            driver.Url = "file:///C:/Administration_IS/Application/index.html";
             MainPage mainPage = new MainPage(driver);
             Thread.Sleep(300);
             mainPage.ServicesTextLinkTwo();
