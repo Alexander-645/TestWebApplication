@@ -1,0 +1,14 @@
+C:\Administration_IS\TestMySite\TestMySite\bin\Debug\TestMySite.dll
+C:\Administration_IS\TestMySite\TestMySite\bin\Debug\TestMySite.pdb
+C:\Administration_IS\TestMySite\TestMySite\bin\Debug\nunit.framework.dll
+C:\Administration_IS\TestMySite\TestMySite\bin\Debug\WebDriver.dll
+C:\Administration_IS\TestMySite\TestMySite\bin\Debug\WebDriver.Support.dll
+C:\Administration_IS\TestMySite\TestMySite\bin\Debug\nunit.framework.pdb
+C:\Administration_IS\TestMySite\TestMySite\bin\Debug\nunit.framework.xml
+C:\Administration_IS\TestMySite\TestMySite\bin\Debug\WebDriver.xml
+C:\Administration_IS\TestMySite\TestMySite\bin\Debug\WebDriver.Support.xml
+C:\Administration_IS\TestMySite\TestMySite\obj\Debug\TestMySite.csprojAssemblyReference.cache
+C:\Administration_IS\TestMySite\TestMySite\obj\Debug\TestMySite.csproj.CoreCompileInputs.cache
+C:\Administration_IS\TestMySite\TestMySite\obj\Debug\TestMySite.csproj.CopyComplete
+C:\Administration_IS\TestMySite\TestMySite\obj\Debug\TestMySite.dll
+C:\Administration_IS\TestMySite\TestMySite\obj\Debug\TestMySite.pdb

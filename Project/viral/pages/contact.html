@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<!--
+Template Name: Viral
+Author: <a href="https://www.os-templates.com/">OS Templates</a>
+Author URI: https://www.os-templates.com/
+Licence: Free to use under our free template licence terms
+Licence URI: https://www.os-templates.com/template-terms
+-->
+<html>
+<head>
+<title>Автосервис "Четыре колеса"/Связь с нами</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<link href="../layout/styles/layout.css" rel="stylesheet" type="text/css" media="all">
+</head>
+<body id="top">
+<!-- ################################################################################################ -->
+<!-- ################################################################################################ -->
+<!-- ################################################################################################ -->
+<div class="wrapper row0">
+  <div id="topbar" class="clear"> 
+    <!-- ################################################################################################ -->
+    <div class="fl_left">
+      <ul class="nospace inline">
+        <li><i class="fa fa-phone"></i> +00 (123) 456 7890</li>
+        <li><i class="fa fa-envelope-o"></i> info@domain.com</li>
+      </ul>
+    </div>
+    <div class="fl_right">
+      <ul class="faico clear">
+        <li><a class="faicon-facebook" href="#"><i class="fa fa-facebook"></i></a></li>
+        <li><a class="faicon-pinterest" href="#"><i class="fa fa-pinterest"></i></a></li>
+        <li><a class="faicon-twitter" href="#"><i class="fa fa-twitter"></i></a></li>
+        <li><a class="faicon-dribble" href="#"><i class="fa fa-dribbble"></i></a></li>
+        <li><a class="faicon-linkedin" href="#"><i class="fa fa-linkedin"></i></a></li>
+        <li><a class="faicon-google-plus" href="#"><i class="fa fa-google-plus"></i></a></li>
+        <li><a class="faicon-rss" href="#"><i class="fa fa-rss"></i></a></li>
+      </ul>
+    </div>
+    <!-- ################################################################################################ -->
+  </div>
+</div>
+<!-- ################################################################################################ -->
+<!-- ################################################################################################ -->
+<!-- ################################################################################################ -->
+<div class="wrapper row1">
+  <header id="header" class="clear"> 
+    <!-- ################################################################################################ -->
+    <div id="logo" class="fl_left">
+      <h1><a id = "FourWheelsLink" href="../index.html">"Четыре колеса"</a></h1>
+    </div>
+    <nav id="mainav" class="fl_right">
+      <ul class="clear">
+        <li><a href="../index.html">Главная</a></li>
+        <li><a class="drop" id = "Drop" href="#">Страницы</a>
+          <ul>
+            <li><a href="services.html">Услуги</a></li>
+            <li><a id = "MaintenancePage" href="maintenance.html">Техническое обслуживание</a></li>
+          </ul>
+        <li class="active"><a href="contact.html">Связь с нами</a></li>
+      </ul>
+    </nav>
+    <!-- ################################################################################################ -->
+  </header>
+</div>
+<!-- ################################################################################################ -->
+<!-- ################################################################################################ -->
+<!-- ################################################################################################ -->
+<div class="wrapper row2 bgded" style="background-image:url('../images/Call.jpg');">
+  <div class="overlay">
+    <div id="breadcrumb" name = "Contact" class="clear"> 
+      <!-- ################################################################################################ -->
+      <ul>
+        <li><a id = "MainLink" href="../index.html">Главная</a></li>
+        <li><a href="#">Связь с нами</a></li>
+      </ul>
+      <!-- ################################################################################################ -->
+    </div>
+  </div>
+</div>
+<!-- ################################################################################################ -->
+<!-- ################################################################################################ -->
+<!-- ################################################################################################ -->
+<div class="wrapper row3">
+  <main class="container clear"> 
+    <!-- main body -->
+    <!-- ################################################################################################ -->
+    <div class="content"> 
+      <!-- ################################################################################################ -->
+      <p>Здесь вы в любое время можете связаться с нами.</p>
+      <div id="comments">
+		<div id = "form">
+        <h2>Написать нам:</h2>
+        <form  onsubmit = "alert('Отправка прошла успешно!')">
+          <div class="one_third first">
+            <label for="name">Имя <span>*</span></label>
+            <input type="text" name="name" id="name" value="" size="22" onchange = "onClickSecond()">
+          </div>
+          <div class="one_third">
+            <label for="email">Mail <span>*</span></label>
+            <input type="email" name="email" id="email" value="" size="22" onchange = "onClickSecond()">
+          </div>
+          <div class="one_third">
+            <label for="phone">Телефон </label>
+            <input type="text" name="url" id="phone" value="" size="22">
+          </div>
+		  <div>
+			<label class="block clear">Тема: <span>*</span></label>
+			<p><select name = "theme[]" id = "theme" required onchange = "onClickSecond()">
+			    <option value = "" hidden>Выбрать</option>
+				<option value = "1">Вопрос</option>
+				<option value = "2">Запись на техобслуживание</option>
+				<option value = "3">Жалобы и предложения</option>
+				<option value = "4">Проблемы</option>
+			</select></p>
+		  </div>
+		  <div id = "radiogroup">
+            <label>Связь с вами: </label>
+            <input type = "radio" name = "radio" id = "r1" value = "1" onchange = "onClickSecond()" checked> По телефону </input>
+			<input type = "radio" name = "radio" id = "r2" value = "2" onchange = "onClickSecond()"> По email </input>
+          </div>
+          <div class="block clear">
+            <label for="comment">Комментарий</label>
+            <textarea name="comment" id="comment" cols="25" rows="10"></textarea>
+          </div>
+          <div>
+            <input name="submit" type="submit" id = "Submit1" value="Отправить" disabled = "true">
+            &nbsp;
+            <input name="reset" type="reset" id = "Reset" value="Очистить" onclick = "onResetClick1()">
+          </div>
+		 </div>
+        </form>
+      </div>
+      <!-- ################################################################################################ -->
+    </div>
+    <!-- ################################################################################################ -->
+    <!-- / main body -->
+    <div class="clear"></div>
+  </main>
+</div>
+<!-- ################################################################################################ -->
+<!-- ################################################################################################ -->
+<!-- ################################################################################################ -->
+<div class="wrapper row5">
+  <footer id="footer" class="clear"> 
+    <!-- ################################################################################################ -->
+    <div class="one_quarter first">
+      <h6 class="title">Автосервис</h6>
+      <address class="btmspace-15">
+      "Четыре колеса"<br>
+      Старославянская 11<br>
+      Москва<br>
+      </address>
+      <ul class="nospace">
+        <li class="btmspace-10"><span class="fa fa-phone"></span> +00 (123) 456 7890</li>
+        <li><span class="fa fa-envelope-o"></span> info@domain.com</li>
+      </ul>
+    </div>
+    <div class="one_quarter">
+      <h6 class="title">Ссылки</h6>
+      <ul class="nospace linklist">
+        <li><a id = "Main" href="../index.html">Главная</a></li>
+        <li><a id = "Services" href="services.html">Услуги</a></li>
+        <li><a id = "Maintenance" href="maintenance.html">Техобслуживание</a></li>
+        <li><a id = "Contact" href="#">Связь с нами</a></li>
+      </ul>
+    </div>
+
+    <div class="one_quarter">
+      <h6 class="title">Получать новости</h6>
+      <form method="post" action="#"  onsubmit = "alert('Отправка прошла успешно!')">
+        <fieldset>
+          <legend>Newsletter:</legend>
+          <input class="btmspace-15" type="text" value="" placeholder="Имя" id = "Name" onchange = "onSubmitClick()">
+          <input class="btmspace-15" type="email" value="" placeholder="Email" id = "Mail" onchange = "onSubmitClick()">
+          <button type="submit" value="submit" id = "SubButton" disabled = "true">Отправить</button>
+        </fieldset>
+      </form>
+    </div>
+    <!-- ################################################################################################ -->
+  </footer>
+</div>
+<!-- ################################################################################################ -->
+<!-- ################################################################################################ -->
+<!-- ################################################################################################ -->
+<div class="wrapper row6">
+  <div id="copyright" class="clear"> 
+    <!-- ################################################################################################ -->
+    <p class="fl_left">Copyright &copy; 2018 - All Rights Reserved - <a href="#">Domain Name</a></p>
+    <!-- ################################################################################################ -->
+  </div>
+</div>
+<!-- ################################################################################################ -->
+<!-- ################################################################################################ -->
+<!-- ################################################################################################ -->
+<a id="backtotop" href="#top"><i class="fa fa-chevron-up"></i></a> 
+<!-- JAVASCRIPTS -->
+<script src ="../layout/scripts/myjs.js"></script>
+<script src="../layout/scripts/jquery.min.js"></script>
+<script src="../layout/scripts/jquery.backtotop.js"></script>
+<script src="../layout/scripts/jquery.mobilemenu.js"></script>
+</body>
+</html>
