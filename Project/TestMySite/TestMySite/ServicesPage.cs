@@ -76,7 +76,7 @@ namespace TestMySite
         private IWebElement dropPages;
 
 
-        public string ServisePageMailField(string name, string mail, string phone)
+        public string FillIncorrectMail(string name, string mail, string phone)
         {
             nameField.SendKeys(name);
             mailField.SendKeys(mail);
@@ -86,7 +86,7 @@ namespace TestMySite
             return mailField.GetAttribute("validationMessage");           
         }
 
-        public string ServicePageSubmitButtonDisable(string mail)
+        public string SubmitButtonDisabled(string mail)
         {
             string buttonDisable = "";
             mailField.Clear();
@@ -96,7 +96,7 @@ namespace TestMySite
             return buttonDisable;
         }
 
-        public Boolean ServicePageSubmitForm(int number)
+        public Boolean SubmitForm(int number)
         {
             bool isSuccess = false;
             switch (number)
@@ -136,16 +136,16 @@ namespace TestMySite
             
         }
 
-        public Boolean ServicePageFillForm(int checkNumber, string name, string mail, string phone)
+        public Boolean FillAndSubmitForm(int checkNumber, string name, string mail, string phone)
         {
             nameField.SendKeys(name);
             mailField.SendKeys(mail);
             phoneField.SendKeys(phone);
-            bool result =  ServicePageSubmitForm(checkNumber);
+            bool result =  SubmitForm(checkNumber);
             return result;
         }
 
-        public Boolean ServicesPageClearForm(string name, string mail, string phone)
+        public Boolean ClearForm(string name, string mail, string phone)
         {
             bool isCleared = false;
 
@@ -176,7 +176,7 @@ namespace TestMySite
             return new MaintenancePage(driver);
         }
 
-        public void ServicesPageFillDateAndComment(string date, string comment)
+        public void FillDateAndComment(string date, string comment)
         {
             dateField.SendKeys(date);
             commentField.SendKeys(comment);
@@ -189,7 +189,7 @@ namespace TestMySite
             return new ContactPage(driver);
         }
 
-        public Boolean ServicePageFillNewsForm(string name, string mail)
+        public Boolean FillNewsForm(string name, string mail)
         {
             bool isSuccess = false;
             newsNameField.SendKeys(name);

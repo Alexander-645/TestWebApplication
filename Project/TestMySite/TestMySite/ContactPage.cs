@@ -80,7 +80,7 @@ namespace TestMySite
             phoneField.SendKeys(phone);
         }
 
-        public string ContactPageDropboxMessage(string name, string mail, string phone)
+        public string SetEmptyDropbox(string name, string mail, string phone)
         {
             ContactFormFillTextFields(name, mail, phone);
             submitButton.Click();
@@ -88,7 +88,7 @@ namespace TestMySite
             return themeSelect.GetAttribute("validationMessage");
         }
 
-        public Boolean ContactPageSubmitForm(string theme)
+        public Boolean FillDropboxAndSubmitForm(string theme)
         {
             bool isSuccess = false;
 
@@ -109,7 +109,7 @@ namespace TestMySite
             }
         }
 
-        public string ContactPageMailFieldError(string name, string mail, string phone, string theme)
+        public string FillIncorrectMail(string name, string mail, string phone, string theme)
         {
             ContactFormFillTextFields(name, mail, phone);
             SelectElement select = new SelectElement(themeSelect);
@@ -119,7 +119,7 @@ namespace TestMySite
             return mailField.GetAttribute("validationMessage");
         }
 
-        public Boolean ContactPageFixMail(string mail)
+        public Boolean FixMailAndSubmitForm(string mail)
         {
             bool isSuccess = false;
 
@@ -141,7 +141,7 @@ namespace TestMySite
             }
         }
 
-        public Boolean ContactPageFillForm(string name, string mail, string phone, string theme)
+        public Boolean FillAndSubmitForm(string name, string mail, string phone, string theme)
         {
             bool isSuccess = false;
             ContactFormFillTextFields(name, mail, phone);
@@ -162,7 +162,7 @@ namespace TestMySite
             }
         }
 
-        public Boolean ContactPageClearForm(string name, string mail, string phone, string theme)
+        public Boolean ClearForm(string name, string mail, string phone, string theme)
         {
             bool isCleared = false;
 
@@ -183,7 +183,7 @@ namespace TestMySite
             return isCleared;
         }
 
-        public Boolean ContactPageNewsForm(string name, string mail)
+        public Boolean FillNewsForm(string name, string mail)
         {
             bool isSuccess = false;
 
@@ -206,7 +206,7 @@ namespace TestMySite
             }
         }
 
-        public MainPage ContactPageMainPageHeaderLink()
+        public MainPage MainPageHeaderLinkClick()
         {
             mainHeaderLink.Click();
 
@@ -222,7 +222,7 @@ namespace TestMySite
             return new MaintenancePage(driver);
         }
 
-        public void ContactPageFormFillRadioAndComments(int radioNum, string comment)
+        public void FillRadioBtnAndComments(int radioNum, string comment)
         {
             switch (radioNum)
             {

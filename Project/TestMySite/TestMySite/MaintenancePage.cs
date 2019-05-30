@@ -49,7 +49,7 @@ namespace TestMySite
             return new ContactPage(driver);
         }
 
-        public Boolean MaintenancePageFillNewsForm(string name, string mail)
+        public Boolean FillNewsForm(string name, string mail)
         {
             bool isSuccess = false;
 

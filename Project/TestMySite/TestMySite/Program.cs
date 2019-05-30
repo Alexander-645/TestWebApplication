@@ -25,101 +25,102 @@ namespace TestMySite
 
         [Test]
         //Test-case № 13
-        public void ServicesPageFormTest()
+        public void TestServicesPageFillForm()
         {
 
             
-            driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(20);
+            driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(5);
             driver.Url = "file:///C:/Administration_IS/Application/index.html";
             MainPage mainPage = new MainPage(driver);
             Thread.Sleep(300);
-            mainPage.ServicesPageLink();
+
+            mainPage.ServicesPageLinkClick();
             
             ServicesPage servicesPage = new ServicesPage(driver);
-            string Valid = servicesPage.ServisePageMailField("Олег", "123", "89521100129");
+
+            string Valid = servicesPage.FillIncorrectMail("Олег", "123", "89521100129");
             bool result = Valid.Contains("@");
             Assert.IsTrue(result, "Сообщение не выведено");
-            Assert.AreEqual("true", servicesPage.ServicePageSubmitButtonDisable("testmail@mail.ru"));
 
-            Assert.IsTrue(servicesPage.ServicePageSubmitForm(1), "Форма не отправлена.");
+            Assert.AreEqual("true", servicesPage.SubmitButtonDisabled("testmail@mail.ru"));
+            Assert.IsTrue(servicesPage.SubmitForm(1), "Форма не отправлена.");
 
-            Assert.IsTrue(servicesPage.ServicePageFillForm(3, "Олег", "testmail@mail.ru", "89521100129"), "");
+            Assert.IsTrue(servicesPage.FillAndSubmitForm(3, "Олег", "testmail@mail.ru", "89521100129"), "Форма не отправлена.");
 
-            Assert.IsTrue(servicesPage.ServicePageFillForm(4, "Олег", "testmail@mail.ru", "89521100129"), "");
+            Assert.IsTrue(servicesPage.FillAndSubmitForm(4, "Олег", "testmail@mail.ru", "89521100129"), "Форма не отправлена.");
 
-            Assert.IsTrue(servicesPage.ServicesPageClearForm("Олег", "testmail@mail.ru", "89521100129"), "Форма не очищена");
+            Assert.IsTrue(servicesPage.ClearForm("Олег", "testmail@mail.ru", "89521100129"), "Форма не очищена");
 
-            driver.Close();
         }
 
         [Test]
         //Test-case № 16
-        public void ContactPageFormTest()
+        public void TestContactPageFillForm()
         {
-            driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(15);
+            driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(5);
             driver.Url = "file:///C:/Administration_IS/Application/index.html";
             MainPage mainPage = new MainPage(driver);
             Thread.Sleep(200);
-            mainPage.MaintenancePageLink();
+            mainPage.MaintenancePageLinkClick();
             
             MaintenancePage maintenacePage = new MaintenancePage(driver);
             maintenacePage.ContactLinkClick();
 
             ContactPage contactPage = new ContactPage(driver);
 
-            string Valid = contactPage.ContactPageDropboxMessage("Сережа", "sermail@gmail.com", "88005553535");
+            string Valid = contactPage.SetEmptyDropbox("Сережа", "sermail@gmail.com", "88005553535");
 
             Assert.AreEqual("Выберите один из пунктов списка.", Valid);
 
-            Assert.IsTrue(contactPage.ContactPageSubmitForm("Вопрос"), "");
+            Assert.IsTrue(contactPage.FillDropboxAndSubmitForm("Вопрос"), "");
             
         }
 
         [Test]
         //Test-case № 17
-        public void ContactPageAllFormElementsTest()
+        public void TestContactPageFillFormDifferentValues()
         {
-            driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(15);
+            driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(5);
             driver.Url = "file:///C:/Administration_IS/Application/index.html";
             MainPage mainPage = new MainPage(driver);
             Thread.Sleep(300);
-            mainPage.ContactPageLink();
+            mainPage.ContactPageLinkClick();
             ContactPage contactPage = new ContactPage(driver);
 
-            string Valid = contactPage.ContactPageMailFieldError("Сережа", "sermail", "88005553535", "Вопрос");
+            string Valid = contactPage.FillIncorrectMail("Сережа", "sermail", "88005553535", "Вопрос");
             bool result = Valid.Contains("@");
             Assert.IsTrue(result, "Сообщение не выведено");
-            Assert.IsTrue(contactPage.ContactPageFixMail("sermail@gmail.com"));
+            Assert.IsTrue(contactPage.FixMailAndSubmitForm("sermail@gmail.com"));
 
-            Assert.IsTrue(contactPage.ContactPageFillForm("Сережа", "sermail@gmail.com", "88005553535", "Запись на техобслуживание"));
+            Assert.IsTrue(contactPage.FillAndSubmitForm("Сережа", "sermail@gmail.com", "88005553535", "Запись на техобслуживание"));
 
-            Assert.IsTrue(contactPage.ContactPageFillForm("Сережа", "sermail@gmail.com", "88005553535", "Жалобы и предложения"));
+            Assert.IsTrue(contactPage.FillAndSubmitForm("Сережа", "sermail@gmail.com", "88005553535", "Жалобы и предложения"));
 
-            Assert.IsTrue(contactPage.ContactPageFillForm("Сережа", "sermail@gmail.com", "88005553535", "Проблемы"));
+            Assert.IsTrue(contactPage.FillAndSubmitForm("Сережа", "sermail@gmail.com", "88005553535", "Проблемы"));
 
-            Assert.IsTrue(contactPage.ContactPageClearForm("Сережа", "sermail@gmail.com", "88005553535", "Проблемы"), "Форма не очищена");
+            Assert.IsTrue(contactPage.FillAndSubmitForm("Сережа", "sermail@gmail.com", "88005553535", "Проблемы"), "Форма не очищена");
             
         }
 
         [Test]
         //Test-case № 18
 
-        public void GoToAllPagesTest()
+        public void TestGoToAllPages()
         {
-            driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(15);
+            driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(5);
             driver.Url = "file:///C:/Administration_IS/Application/index.html";
             MainPage mainPage = new MainPage(driver);
             Thread.Sleep(300);
-            mainPage.ServicesPageTextLink();
+            mainPage.ServicesPageTextLinkClick();
             ServicesPage servicesPage = new ServicesPage(driver);
             servicesPage.MaintenanceLinkClick();
             MaintenancePage maintenacePage = new MaintenancePage(driver);
             maintenacePage.ContactLinkClick();
             ContactPage contactPage = new ContactPage(driver);
 
-            Assert.IsTrue(contactPage.ContactPageNewsForm("Александр", "myemail@mail.ru"));
+            Assert.IsTrue(contactPage.FillNewsForm("Александр", "myemail@mail.ru"));
 
-            bool isMainPageOpened = contactPage.ContactPageMainPageHeaderLink().MainPageOpen();
+            bool isMainPageOpened = contactPage.MainPageHeaderLinkClick().MainPageOpen();
             Assert.IsTrue(isMainPageOpened, "Главная страница не открылась");
             
         }
@@ -128,22 +129,22 @@ namespace TestMySite
         [Test]
         //Test-case № 19
 
-        public void AllPagesFormTest()
+        public void TestFillAllForms()
         {
-            driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(15);
+            driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(5);
 
             driver.Url = "file:///C:/Administration_IS/Application/index.html";
             MainPage mainPage = new MainPage(driver);
             Thread.Sleep(300);
-            mainPage.ServicesTextLinkTwo();
+            mainPage.LowerServicesTextLinkClick();
 
             ServicesPage servicesPage = new ServicesPage(driver);
             string date = DateTime.Now.ToShortDateString();
-            servicesPage.ServicesPageFillDateAndComment(date, "Это простой комментарий");
+            servicesPage.FillDateAndComment(date, "Это простой комментарий");
 
-            Assert.IsTrue(servicesPage.ServicePageFillForm(4, "Павел", "pavmail@gmail.com", "88005553535"));
+            Assert.IsTrue(servicesPage.FillAndSubmitForm(4, "Павел", "pavmail@gmail.com", "88005553535"));
 
-            Assert.IsTrue(servicesPage.ServicePageFillNewsForm("Павел", "pavelmail@gmail.com"));
+            Assert.IsTrue(servicesPage.FillNewsForm("Павел", "pavelmail@gmail.com"));
 
             servicesPage.ContactUsLinkClick();
 
@@ -155,28 +156,35 @@ namespace TestMySite
             Thread.Sleep(300);
             maintenancePage.ContactLinkClick();
             
-            Assert.IsTrue(contactPage.ContactPageClearForm("Павел", "pavmail@gmail.com", "88005553535", "Проблемы"), "Форма не очищена");
+            Assert.IsTrue(contactPage.ClearForm("Павел", "pavmail@gmail.com", "88005553535", "Проблемы"), "Форма не очищена");
 
-            contactPage.ContactPageFormFillRadioAndComments(2, "Комментарий");
-            Assert.IsTrue(contactPage.ContactPageFillForm("Павел", "pavelmail@gmail.com", "88005553535", "Жалобы и предложения"));
+            contactPage.FillRadioBtnAndComments(2, "Комментарий");
+            Assert.IsTrue(contactPage.FillAndSubmitForm("Павел", "pavelmail@gmail.com", "88005553535", "Жалобы и предложения"));
 
-            contactPage.ContactPageFormFillRadioAndComments(2, "Комментарий");
-            Assert.IsTrue(contactPage.ContactPageFillForm("Павел", "pavelmail@gmail.com", "88005553535", "Вопрос"));
+            contactPage.FillRadioBtnAndComments(2, "Комментарий");
+            Assert.IsTrue(contactPage.FillAndSubmitForm("Павел", "pavelmail@gmail.com", "88005553535", "Вопрос"));
 
-            contactPage.ContactPageFormFillRadioAndComments(2, "Комментарий");
-            Assert.IsTrue(contactPage.ContactPageFillForm("Павел", "pavelmail@gmail.com", "88005553535", "Запись на техобслуживание"));
+            contactPage.FillRadioBtnAndComments(2, "Комментарий");
+            Assert.IsTrue(contactPage.FillAndSubmitForm("Павел", "pavelmail@gmail.com", "88005553535", "Запись на техобслуживание"));
 
-            Assert.IsTrue(contactPage.ContactPageNewsForm("Павел", "pavelmail@gmail.com"));
+            Assert.IsTrue(contactPage.FillNewsForm("Павел", "pavelmail@gmail.com"));
 
            
             bool isMainPageOpened = contactPage.FourWheelsLinkClick().MainPageOpen();
             Assert.IsTrue(isMainPageOpened, "Главная страница не открылась");
 
-            Assert.IsTrue(mainPage.MainPageFillNewsForm("Павел", "pavelmail@gmail.com"));
+            Assert.IsTrue(mainPage.FillNewsForm("Павел", "pavelmail@gmail.com"));
             mainPage.MaintenaceTextLinkClick();
 
-            Assert.IsTrue(maintenancePage.MaintenancePageFillNewsForm("Павел", "pavelmail@gmail.com"));
+            Assert.IsTrue(maintenancePage.FillNewsForm("Павел", "pavelmail@gmail.com"));
             maintenancePage.MainPageLinkClick();
+        }
+
+
+        [OneTimeTearDown]
+        public void DriverClose()
+        {
+            driver.Close();
         }
     }
 

@@ -26,7 +26,7 @@ namespace TestMySite
         }
 
         [FindsBy(How = How.CssSelector, Using = "#Services")]
-        private IWebElement servicesButton;
+        private IWebElement servicesLinkButton;
 
         [FindsBy(How = How.CssSelector, Using = "#Drop")]
         private IWebElement dropPages;
@@ -34,14 +34,14 @@ namespace TestMySite
         [FindsBy(How = How.CssSelector, Using = "#ServicesTextLink")]
         private IWebElement servicesTextLink;
 
-        [FindsBy(How = How.CssSelector, Using = "#ServicesTextLink2")]
-        private IWebElement servicesTextLinkTwo;
+        [FindsBy(How = How.CssSelector, Using = "#LowerServicesTextLink")]
+        private IWebElement lowerServicesTextLink;
 
         [FindsBy(How = How.CssSelector, Using = "#Maintenance")]
-        private IWebElement maintenanceButton;
+        private IWebElement maintenanceLinkButton;
 
         [FindsBy(How = How.CssSelector, Using = "#ContactUs")]
-        private IWebElement contactButton;
+        private IWebElement contactLinkButton;
 
         [FindsBy(How = How.CssSelector, Using = "#pageintro")]
         private IWebElement pageIntro;
@@ -63,37 +63,37 @@ namespace TestMySite
 
 
 
-        public MainPage ServicesPageLink()
+        public MainPage ServicesPageLinkClick()
         {
             Actions action = new Actions(driver);
             action.MoveToElement(dropPages).Perform();
             Thread.Sleep(300);
-            servicesButton.Click();
+            servicesLinkButton.Click();
 
             return new MainPage(driver);
         }
 
-        public MainPage MaintenancePageLink()
+        public MainPage MaintenancePageLinkClick()
         {
             Actions action = new Actions(driver);
             action.MoveToElement(dropPages).Perform();
             Thread.Sleep(300);
-            maintenanceButton.Click();
+            maintenanceLinkButton.Click();
 
             return new MainPage(driver);
         }
 
-        public MainPage ContactPageLink()
+        public MainPage ContactPageLinkClick()
         {
             Actions action = new Actions(driver);
             action.MoveToElement(dropPages).Perform();
             Thread.Sleep(300);
-            contactButton.Click();
+            contactLinkButton.Click();
 
             return new MainPage(driver);
         }
 
-        public MainPage ServicesPageTextLink()
+        public MainPage ServicesPageTextLinkClick()
         {
             servicesTextLink.Click();
 
@@ -105,14 +105,14 @@ namespace TestMySite
             return pageIntro.Displayed;
         }
 
-        public MainPage ServicesTextLinkTwo()
+        public MainPage LowerServicesTextLinkClick()
         {
-            servicesTextLink.Click();
+            lowerServicesTextLink.Click();
 
             return new MainPage(driver);
         }
 
-        public Boolean MainPageFillNewsForm(string name, string mail)
+        public Boolean FillNewsForm(string name, string mail)
         {
             bool isSuccess = false;
 
